@@ -1,6 +1,16 @@
 import 'package:english_words/english_words.dart';
 import 'package:flutter/material.dart';
 
+class Day2App extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return new MaterialApp(
+      theme: new ThemeData(primaryColor: Colors.blue),
+      home: new RandomWords(),
+    );
+  }
+}
+
 class RandomWords extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
@@ -19,7 +29,7 @@ class RandomWordsState extends State<RandomWords> {
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: new AppBar(
-        title: new Text("Startup Name Generator"),
+        title: new Text("Flutter Demo Day2"),
         actions: <Widget>[
           new IconButton(icon: new Icon(Icons.list), onPressed: _pushPressed)
         ],
@@ -37,7 +47,7 @@ class RandomWordsState extends State<RandomWords> {
       });
 
       final divided =
-      ListTile.divideTiles(context: context, tiles: tiles).toList();
+          ListTile.divideTiles(context: context, tiles: tiles).toList();
 
       return new Scaffold(
         appBar: new AppBar(title: new Text("Saved Suggestions")),

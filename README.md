@@ -12,3 +12,10 @@
     * StatelessWidget定义的是静态的布局，而StatefulWidget写的是动态的布局。
 * State对象保存Widget的状态，泛型为要保存的Widget。
 * 页面跳转使用Navigator对象，跳转的是一个由MaterialPageRoute分发的页面。
+
+
+### 第三天(2018.10.29)
+* 学习Flutter布局。
+* 读取本地图片然后展示。
+* 学习了控件：Container，Row，Column，Expanded，Icon，Text等。
+* 了解到了Flutter的布局结构。
