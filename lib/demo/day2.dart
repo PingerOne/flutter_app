@@ -5,9 +5,18 @@ class Day2App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
-      theme: new ThemeData(primaryColor: Colors.blue),
-      home: new RandomWords(),
-    );
+        theme: new ThemeData(primaryColor: Colors.blue),
+        home: new Scaffold(
+          appBar: new AppBar(
+            title: new Text("Flutter Demo Day2"),
+            leading: new IconButton(
+                icon: Icon(Icons.arrow_back),
+                onPressed: () {
+                  Navigator.pop(context);
+                }),
+          ),
+          body: new RandomWords(),
+        ));
   }
 }
 
@@ -27,33 +36,7 @@ class RandomWordsState extends State<RandomWords> {
 
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-      appBar: new AppBar(
-        title: new Text("Flutter Demo Day2"),
-        actions: <Widget>[
-          new IconButton(icon: new Icon(Icons.list), onPressed: _pushPressed)
-        ],
-      ),
-      body: _buildSuggestion(),
-    );
-  }
-
-  // 导航点击事件
-  void _pushPressed() {
-    Navigator.of(context).push(new MaterialPageRoute(builder: (context) {
-      final tiles = _saved.map((pair) {
-        return new ListTile(
-            title: new Text(pair.asPascalCase, style: _bigFont));
-      });
-
-      final divided =
-          ListTile.divideTiles(context: context, tiles: tiles).toList();
-
-      return new Scaffold(
-        appBar: new AppBar(title: new Text("Saved Suggestions")),
-        body: new ListView(children: divided),
-      );
-    }));
+    return _buildSuggestion();
   }
 
   Widget _buildSuggestion() {

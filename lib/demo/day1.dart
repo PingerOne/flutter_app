@@ -6,13 +6,26 @@ class Day1App extends StatelessWidget {
   Widget build(BuildContext context) {
     return new MaterialApp(
       theme: new ThemeData(primaryColor: Colors.brown),
-      home: new MyHomePage(title: "Flutter Demo Day1"),
+      home: new Scaffold(
+        appBar: new AppBar(
+          // Here we take the value from the MyHomePage object that was created by
+          // the App.build method, and use it to set our appbar title.
+          title: new Text("Flutter Demo Day1"),
+          leading: new IconButton(
+            icon: new Icon(Icons.arrow_back),
+            onPressed: () {
+              Navigator.pop(context);
+            },
+          ),
+        ),
+        body: new MyHomePage(),
+      ),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
+  MyHomePage({Key key}) : super(key: key);
 
   // This widget is the home page of your application. It is stateful, meaning
   // that it has a State object (defined below) that contains fields that affect
@@ -22,8 +35,6 @@ class MyHomePage extends StatefulWidget {
   // case the title) provided by the parent (in this case the App widget) and
   // used by the build method of the State. Fields in a Widget subclass are
   // always marked "final".
-
-  final String title;
 
   @override
   _MyHomePageState createState() => new _MyHomePageState();
@@ -52,11 +63,6 @@ class _MyHomePageState extends State<MyHomePage> {
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
     return new Scaffold(
-      appBar: new AppBar(
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: new Text(widget.title),
-      ),
       body: new Center(
         // Center is a layout widget. It takes a single child and positions it
         // in the middle of the parent.

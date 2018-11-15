@@ -19,3 +19,13 @@
 * 读取本地图片然后展示。
 * 学习了控件：Container，Row，Column，Expanded，Icon，Text等。
 * 了解到了Flutter的布局结构。
+
+### 第四天(2018.11.14)
+* 熟练StatelessWidget和StatefulWidget的区别,静态页面使用StatelessWidget,动态页面使用StatefulWidget。
+* 学习网络加载图片,加载网络图片,加载缓存图片等。
+* StatefulWidget的更新状态,控件的点击,和ListView的构建点击等。
+
+
+### 第五天(2018.11.15)
+*
+

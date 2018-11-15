@@ -1,12 +1,20 @@
 import 'package:flutter/material.dart';
 
+// 构建Flutter静态页面
 class Day3App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
-      theme: ThemeData(primaryColor: Colors.red),
+      theme: ThemeData(primaryColor: Colors.teal),
       home: new Scaffold(
-          appBar: new AppBar(title: new Text("Flutter Demo Day3")),
+          appBar: new AppBar(
+            title: new Text("Flutter Demo Day3"),
+            leading: new IconButton(
+                icon: Icon(Icons.arrow_back),
+                onPressed: () {
+                  Navigator.pop(context);
+                }),
+          ),
           body: new LayoutPage()),
     );
   }
@@ -17,7 +25,7 @@ class LayoutPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return new ListView(
       children: <Widget>[
-        new Image.asset("images/girl_01.jpg",fit: BoxFit.fitWidth),
+        new Image.asset("images/girl_01.jpg", fit: BoxFit.fitWidth),
         new TitleSection(),
         new ButtonSection(),
         new TextSection()
