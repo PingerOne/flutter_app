@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app/demo/Day5.dart';
 import 'package:flutter_app/demo/day1.dart';
 import 'package:flutter_app/demo/day2.dart';
 import 'package:flutter_app/demo/day3.dart';
 import 'package:flutter_app/demo/day4.dart';
+import 'package:flutter_app/demo/day5.dart';
+import 'package:flutter_app/demo/day6.dart';
 
-void main() => runApp(new DemoApp());
+void main() => runApp(new Day6App());
 
 class DemoApp extends StatefulWidget {
   @override
