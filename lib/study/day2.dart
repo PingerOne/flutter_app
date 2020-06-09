@@ -8,7 +8,7 @@ class Day2App extends StatelessWidget {
         theme: new ThemeData(primaryColor: Colors.blue),
         home: new Scaffold(
           appBar: new AppBar(
-            title: new Text("Flutter Demo Day2"),
+            title: new Text("Flutter Study Day2"),
             leading: new IconButton(
                 icon: Icon(Icons.arrow_back),
                 onPressed: () {

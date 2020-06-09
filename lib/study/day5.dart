@@ -19,7 +19,8 @@ class _AnimationPageState extends State<Day5App> {
   void initState() {
     super.initState();
 
-    _list = new ListModel(listKey: _listKey,
+    _list = new ListModel(
+        listKey: _listKey,
         removedItemBuilder: _buildRemovedItem,
         initialItems: <int>[0, 1, 2]);
     _nextItem = 3;
@@ -31,7 +32,7 @@ class _AnimationPageState extends State<Day5App> {
         theme: ThemeData(primaryColor: Colors.blue),
         home: Scaffold(
             appBar: AppBar(
-              title: const Text("Flutter Demo Day5"),
+              title: const Text("Flutter Study Day5"),
               leading: IconButton(
                   icon: Icon(Icons.arrow_back),
                   onPressed: () {
@@ -47,14 +48,15 @@ class _AnimationPageState extends State<Day5App> {
             ),
             body: Padding(
                 padding: const EdgeInsets.all(16.0),
-                child: AnimatedList(key: _listKey,
-                  initialItemCount: _list.length,
-                  itemBuilder: _buildItem))));
+                child: AnimatedList(
+                    key: _listKey,
+                    initialItemCount: _list.length,
+                    itemBuilder: _buildItem))));
   }
 
   // Used to build list items that haven't been removed.
-  Widget _buildItem(BuildContext context, int index,
-      Animation<double> animation) {
+  Widget _buildItem(
+      BuildContext context, int index, Animation<double> animation) {
     return new CardItem(
       animation: animation,
       item: _list[index],
@@ -72,8 +74,8 @@ class _AnimationPageState extends State<Day5App> {
   // completed (even though it's gone as far this ListModel is concerned).
   // The widget will be used by the [AnimatedListState.removeItem] method's
   // [AnimatedListRemovedItemBuilder] parameter.
-  Widget _buildRemovedItem(int item, BuildContext context,
-      Animation<double> animation) {
+  Widget _buildRemovedItem(
+      int item, BuildContext context, Animation<double> animation) {
     return new CardItem(
       animation: animation,
       item: item,
@@ -84,8 +86,8 @@ class _AnimationPageState extends State<Day5App> {
 
 // Insert the "next item" into the list model.
   void _insert() {
-    final int index = _selectedItem == null ? _list.length : _list.indexOf(
-        _selectedItem);
+    final int index =
+        _selectedItem == null ? _list.length : _list.indexOf(_selectedItem);
     _list.insert(index, _nextItem++);
   }
 
@@ -102,9 +104,10 @@ class _AnimationPageState extends State<Day5App> {
 
 // 数据模型
 class ListModel<E> {
-  ListModel({@required this.listKey,
-    @required this.removedItemBuilder,
-    Iterable<E> initialItems})
+  ListModel(
+      {@required this.listKey,
+      @required this.removedItemBuilder,
+      Iterable<E> initialItems})
       : assert(listKey != null),
         assert(removedItemBuilder != null),
         _items = new List<E>.from(initialItems);
@@ -123,8 +126,8 @@ class ListModel<E> {
   E removeAt(int index) {
     final E removedItem = _items.removeAt(index);
     if (removedItem != null) {
-      _animatedList.removeItem(
-          index, (BuildContext context, Animation<double> animation) {
+      _animatedList.removeItem(index,
+          (BuildContext context, Animation<double> animation) {
         return removedItemBuilder(removedItem, context, animation);
       });
     }
@@ -140,11 +143,12 @@ class ListModel<E> {
 
 // item
 class CardItem extends StatelessWidget {
-  CardItem({Key key,
-    @required this.animation,
-    @required this.item,
-    this.onTap,
-    this.selected = false})
+  CardItem(
+      {Key key,
+      @required this.animation,
+      @required this.item,
+      this.onTap,
+      this.selected = false})
       : assert(animation != null),
         assert(item != null && item >= 0),
         assert(selected != null),
@@ -157,10 +161,7 @@ class CardItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    TextStyle textStyle = Theme
-        .of(context)
-        .textTheme
-        .display1;
+    TextStyle textStyle = Theme.of(context).textTheme.display1;
     if (selected)
       textStyle = textStyle.copyWith(color: Colors.lightGreenAccent[400]);
     return new Padding(

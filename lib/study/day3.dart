@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
-// 构建Flutter动态页面
-class Day4App extends StatelessWidget {
+// 构建Flutter静态页面
+class Day3App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
-      theme: ThemeData(primaryColor: Colors.red),
+      theme: ThemeData(primaryColor: Colors.teal),
       home: new Scaffold(
           appBar: new AppBar(
-            title: new Text("Flutter Demo Day4"),
+            title: new Text("Flutter Study Day3"),
             leading: new IconButton(
                 icon: Icon(Icons.arrow_back),
                 onPressed: () {
@@ -20,22 +20,12 @@ class Day4App extends StatelessWidget {
   }
 }
 
-class LayoutPage extends StatefulWidget {
-  @override
-  State<StatefulWidget> createState() {
-    return new _LayoutPageState();
-  }
-}
-
-class _LayoutPageState extends State<LayoutPage> {
-  String image =
-      "https://raw.githubusercontent.com/flutter/website/master/src/_includes/code/layout/lakes/images/lake.jpg";
-
+class LayoutPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new ListView(
       children: <Widget>[
-        new Image.network(image),
+        new Image.asset("images/girl_01.jpg", fit: BoxFit.fitWidth),
         new TitleSection(),
         new ButtonSection(),
         new TextSection()
@@ -44,14 +34,7 @@ class _LayoutPageState extends State<LayoutPage> {
   }
 }
 
-class TitleSection extends StatefulWidget {
-  @override
-  State<StatefulWidget> createState() {
-    return _TitleSectionState();
-  }
-}
-
-class _TitleSectionState extends State<TitleSection> {
+class TitleSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new Container(
@@ -72,56 +55,13 @@ class _TitleSectionState extends State<TitleSection> {
             )
           ],
         )),
-        FavoriteWidget()
+        new Icon(Icons.star, color: Colors.pink),
+        new Container(
+          padding: EdgeInsets.only(left: 8.0),
+          child: new Text("41"),
+        )
       ]),
     );
-  }
-}
-
-class FavoriteWidget extends StatefulWidget {
-  @override
-  State<StatefulWidget> createState() {
-    return _FavoriteWidgetState();
-  }
-}
-
-class _FavoriteWidgetState extends State<FavoriteWidget> {
-  int _favoriteCount = 41;
-  bool _isFavorite = false;
-
-  @override
-  Widget build(BuildContext context) {
-    return new Row(
-      mainAxisSize: MainAxisSize.min,
-      children: <Widget>[
-        new Container(
-          child: new IconButton(
-            icon: _isFavorite
-                ? new Icon(Icons.favorite)
-                : new Icon(Icons.favorite_border),
-            onPressed: _favoritePressed,
-            color: Colors.red[500],
-          ),
-        ),
-        new SizedBox(
-          width: 18.0,
-          child: new Container(
-            child: new Text("$_favoriteCount"),
-          ),
-        )
-      ],
-    );
-  }
-
-  void _favoritePressed() {
-    setState(() {
-      _isFavorite = !_isFavorite;
-      if (_isFavorite) {
-        _favoriteCount += 1;
-      } else {
-        _favoriteCount -= 1;
-      }
-    });
   }
 }
 
