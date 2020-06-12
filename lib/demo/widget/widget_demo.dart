@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app/demo/form/form_widget.dart';
+import 'package:flutter_app/demo/button/button_demo.dart';
 import 'package:flutter_app/demo/route/post_route.dart';
 
 class WidgetDemoApp extends StatelessWidget {
@@ -10,7 +10,8 @@ class WidgetDemoApp extends StatelessWidget {
       initialRoute: "/",
       routes: {
 //        "/": (context) => HomeWidget(),
-        "/": (context) => FormWidget(),
+//        "/": (context) => FormWidget(),
+        "/": (context) => ButtonDemo(),
         "/post_route": (context) =>
             PostRoute(post: ModalRoute
                 .of(context)
