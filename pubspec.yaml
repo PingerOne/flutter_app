@@ -1,4 +1,4 @@
-name: flutter_app
+name: flutter_demo
 description: A new Flutter application.
 
 # The following defines the version and build number for your application.
@@ -10,7 +10,7 @@ description: A new Flutter application.
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.0.0-dev.68.0 <3.0.0"
+  sdk: ">=2.2.0 <3.0.0"
 
 dependencies:
   flutter:
@@ -22,6 +22,7 @@ dependencies:
   english_words: ^3.1.0
   cached_network_image: ^0.4.1+1
   transparent_image: ^0.1.0
+  intl: 0.16.1
 
 dev_dependencies:
   flutter_test:

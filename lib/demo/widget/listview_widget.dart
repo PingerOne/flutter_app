@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app/demo/model/post.dart';
+import 'package:flutter_demo/demo/model/post.dart';
 
 class ListViewWidget extends StatelessWidget {
   Widget _listItemBuilder(BuildContext context, int index) {
@@ -13,37 +13,28 @@ class ListViewWidget extends StatelessWidget {
                 Image.network(
                   posts[index].imageUrl,
                   fit: BoxFit.cover,
-                  width: MediaQuery
-                      .of(context)
-                      .size
-                      .width,
+                  width: MediaQuery.of(context).size.width,
                 ),
                 SizedBox(height: 12.0),
                 Text(posts[index].title,
-                    style: Theme
-                        .of(context)
-                        .textTheme
-                        .title),
+                    style: Theme.of(context).textTheme.title),
                 Text(posts[index].author,
-                    style: Theme
-                        .of(context)
-                        .textTheme
-                        .subtitle),
+                    style: Theme.of(context).textTheme.subtitle),
                 SizedBox(height: 10.0)
               ],
             ),
             Positioned.fill(
                 child: Material(
-                  color: Colors.transparent,
-                  child: InkWell(
-                    splashColor: Colors.white.withOpacity(0.5),
-                    highlightColor: Colors.white.withOpacity(0.3),
-                    onTap: () {
-                      Navigator.of(context)
-                          .pushNamed("/post_route", arguments: posts[index]);
-                    },
-                  ),
-                ))
+              color: Colors.transparent,
+              child: InkWell(
+                splashColor: Colors.white.withOpacity(0.5),
+                highlightColor: Colors.white.withOpacity(0.3),
+                onTap: () {
+                  Navigator.of(context)
+                      .pushNamed("/post_route", arguments: posts[index]);
+                },
+              ),
+            ))
           ],
         ));
   }

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app/study/day1.dart';
-import 'package:flutter_app/study/day2.dart';
-import 'package:flutter_app/study/day3.dart';
-import 'package:flutter_app/study/day4.dart';
-import 'package:flutter_app/study/day5.dart';
-import 'package:flutter_app/study/day6.dart';
+import 'package:flutter_demo/study/day1.dart';
+import 'package:flutter_demo/study/day2.dart';
+import 'package:flutter_demo/study/day3.dart';
+import 'package:flutter_demo/study/day4.dart';
+import 'package:flutter_demo/study/day5.dart';
+import 'package:flutter_demo/study/day6.dart';
 
 class StudyApp extends StatefulWidget {
   @override

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app/demo/pager/grid_widget.dart';
-import 'package:flutter_app/demo/pager/pager_widget.dart';
-import 'package:flutter_app/demo/sliver/sliver_widget.dart';
-import 'package:flutter_app/demo/widget/bottom_widget.dart';
-import 'package:flutter_app/demo/widget/drawer_widget.dart';
-import 'package:flutter_app/demo/widget/listview_widget.dart';
+import 'package:flutter_demo/demo/pager/grid_widget.dart';
+import 'package:flutter_demo/demo/pager/pager_widget.dart';
+import 'package:flutter_demo/demo/sliver/sliver_widget.dart';
+import 'package:flutter_demo/demo/widget/bottom_widget.dart';
+import 'package:flutter_demo/demo/widget/drawer_widget.dart';
+import 'package:flutter_demo/demo/widget/listview_widget.dart';
 
 class HomeWidget extends StatelessWidget {
   final List<Widget> _icons = [

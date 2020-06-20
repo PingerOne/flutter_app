@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app/demo/model/post.dart';
+import 'package:flutter_demo/demo/model/post.dart';
 
 class PagerWidget extends StatelessWidget {
   @override

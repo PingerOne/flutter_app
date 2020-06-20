@@ -5,7 +5,7 @@
 // are correct.
 
 import 'package:flutter/material.dart';
-import 'package:flutter_app/study/day3.dart';
+import 'package:flutter_demo/study/day3.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
